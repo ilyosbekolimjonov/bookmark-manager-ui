@@ -1,38 +1,241 @@
-.App {
-  text-align: center;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* CUSTOM-PROPS */
+:root {
+    --blue: #5267Df;
+    --red: #fa5959;
+    --black: #242a45;
+    --gray: #9194a2;
+    --text-color: rgba(36, 42, 69, 0.5);
+
+    --shadow: 0px 10px 20px -5px rgba(73, 93, 207, 0.2);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* FONT-FACE  */
+@font-face {
+    font-family: "Rubik";
+    src: url("../public/fonts/Rubik-Regular.woff2") format("woff2"),
+        url("../public/fonts/Rubik-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@font-face {
+    font-family: "Rubik";
+    src: url("../public/fonts/Rubik-Bold.woff2") format("woff2"),
+        url("../public/fonts/Rubik-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
 }
 
-.App-link {
-  color: #61dafb;
+@font-face {
+    font-family: "Rubik";
+    src: url("../public/fonts/Rubik-SemiBold.woff2") format("woff2"),
+        url("../public/fonts/Rubik-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+    font-family: "Rubik";
+    src: url("../public/fonts/Rubik-MediumItalic.woff2") format("woff2"),
+        url("../public/fonts/Rubik-MediumItalic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Rubik";
+    src: url("../public/fonts/Rubik-Medium.woff2") format("woff2"),
+        url("../public/fonts/Rubik-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* GLOBAL-STYLES  */
+html {
+    box-sizing: border-box;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #fff;
+    color: var(--text-color);
+    font-family: "Rubik", "Arial", sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* FOCUS-STYLES  */
+*:focus {
+    outline-style: dashed;
+    outline-width: 3px;
+    outline-color: var(--black);
+}
+
+/* CONTAINER  */
+.container {
+    max-width: 1164px;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+*:focus {
+    outline: 2px dashed var(--black);
+}
+
+/* CUSTOM SCROLLBAR */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+}
+
+/* VISUALLY-HIDDEN  */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+/* BUTTON  */
+.button {
+    display: inline-block;
+    padding: 0;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: color 0.3s ease,
+        background-color 0.3s ease,
+        opacity 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: transparent;
+}
+
+.button:active {
+    opacity: 0.6;
+}
+
+.button--red {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 17px;
+    letter-spacing: 1.5px;
+    background-color: var(--red);
+    padding: 12px 31px;
+}
+
+.button--red:hover {
+    color: var(--red);
+    border-color: var(--red);
+}
+
+.button--big {
+    background-color: var(--blue);
+    padding: 8px 24px;
+    line-height: 28px;
+}
+
+.button--big:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+.button--big-light {
+    background-color: #f7f7f7;
+    color: rgba(36, 42, 69, 0.75);
+    margin-left: 16px;
+}
+
+.button--big-light:hover {
+    border-color: rgba(36, 42, 69, 0.75);
+    color: rgba(36, 42, 69, 0.75);
+}
+
+.button--blue {
+    text-transform: capitalize;
+    background-color: var(--blue);
+    padding: 8px 22px;
+}
+
+.button--blue:hover {
+    opacity: 0.8;
+    background-color: var(--blue);
+}
+
+.button--blue:active {
+    opacity: 0.6;
+}
+
+.button--big-blue {
+    width: 100%;
+    padding: 8px;
+}
+
+.button--red-contact-us {
+    padding: 8px 22px;
+    text-transform: capitalize;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 1.5px;
+}
+
+.button--red-contact-us:hover {
+    background-color: white;
 }
