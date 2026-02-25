@@ -13,7 +13,6 @@ export default function Future() {
                 </div>
 
 
-                {/* <!-- TABS  --> */}
                 <div className="tabs">
                     <ul className="tabs__list">
                         <li className="tabs__item tabs__item--active js-tabs__item">
@@ -37,7 +36,6 @@ export default function Future() {
                     <section className="tab-panels">
                         <h2 className="visually-hidden">Feature's TabLink</h2>
 
-                        {/* <!-- SIMPLE BOOOKMARKING  --> */}
                         <div className="tab-panels__tab-panel js-tab-panel tab-panels__tab-panel--active" id="simple-bookmarking">
                             <div className="tab-panels__tab-panel-inner">
                                 <img className="tab-panels__tab-panel-img tab-panels__tab-panel-img-simple-bookmarking" src={bokmarking} alt="Tablet" width="536" height="346"/>
@@ -46,19 +44,18 @@ export default function Future() {
                                         <p className="tab-panels__tab-panel-content-description">Organize your bookmarks however you like. Our
                                             simple drag-and-drop interface gives you complete control over how you manage your favourite sites.
                                         </p>
-                                        <a className="button button--blue" href="#">More info</a>
+                                        <button className="button button--blue" type="button">More info</button>
                                     </div>
                             </div>
                         </div>
 
-                        {/* <!-- SPEEDY SEARCHING  --> */}
                         <div className="tab-panels__tab-panel js-tab-panel" id="speedy-searching">
                             <div className="tab-panels__tab-panel-inner">
                                 <img className="tab-panels__tab-panel-img tab-panels__tab-panel-img-speedy-searching" src={searching} alt="Speedy searching's img" width="468" height="393"/>
                                     <div className="tab-panels__tab-panel-content">
                                         <h2 className="tab-panels__tab-panel-content-title">Intelligent search</h2>
                                         <p className="tab-panels__tab-panel-content-description">Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.</p>
-                                        <a className="button button--blue" href="#">More info</a>
+                                        <button className="button button--blue" type="button">More info</button>
                                     </div>
                             </div>
                         </div>
@@ -70,7 +67,7 @@ export default function Future() {
                                         <h2 className="tab-panels__tab-panel-content-title">Share your bookmarks</h2>
                                         <p className="tab-panels__tab-panel-content-description">Easily share your bookmarks and collections with
                                             others. Create a shareable link that you can send at the click of a button.</p>
-                                        <a className="button button--blue" href="#">More info</a>
+                                        <button className="button button--blue" type="button">More info</button>
                                     </div>
                             </div>
                         </div>
